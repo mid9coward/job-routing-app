@@ -33,7 +33,7 @@ function JobDetailModal() {
       setJob(data);
     };
     fetchData();
-  }, [id]); // Add 'id' to the dependency array
+  }, []);
 
   const handleClose = () => {
     navigate(-1);

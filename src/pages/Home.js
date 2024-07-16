@@ -4,12 +4,12 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import api from "../data/fetchData";
 import Pagination from "@mui/material/Pagination";
+import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";
 
-// eslint-disable-next-line no-empty-pattern
-const CentterPagination = styled(Pagination)(({}) => ({
+const CentterPagination = styled(Pagination)(({ theme }) => ({
   ul: {
     justifyContent: "center",
   },
@@ -19,7 +19,7 @@ function Home() {
   const [jobs, setJobs] = useState([]);
   const [pagesTotal, setPagesTotal] = useState(0);
   const [page, setPage] = useState(1);
-  const [searchParams] = useSearchParams();
+  const [searchParams, setSearchParams] = useSearchParams();
   const q = searchParams.get("q");
 
   useEffect(() => {
@@ -51,7 +51,7 @@ function Home() {
             sx={{ marginTop: "15px" }}
             count={pagesTotal}
             color="primary"
-            onChange={(_event, value) => {
+            onChange={(event, value) => {
               setPage(value);
             }}
           />
