@@ -1,11 +1,8 @@
-import React, { useContext, useState } from "react";
-import Box from "@mui/material/Box";
+import React, { useContext } from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
-import Chip from "@mui/material/Chip";
 import Stack from "@mui/material/Stack";
 import Divider from "@mui/material/Divider";
 import AuthContext from "../auth/AuthContext";
@@ -36,7 +33,7 @@ function JobCard({ description, skills, id, title }) {
     }
   };
   return (
-    <CardStyle ariant="outlined">
+    <CardStyle variant="outlined">
       <Stack
         direction="column"
         justifyContent="space-between"
@@ -64,6 +61,7 @@ function JobCard({ description, skills, id, title }) {
           to={`/job/${id}`}
           state={{ backgroundLocation: location }}
           sx={{ width: "130px", backgroundColor: "#df9e0b" }}
+          onClick={handleClick}
         >
           Learn More
         </Button>

@@ -18,7 +18,8 @@ async function getJobs(page, q = null) {
 
 async function getJob(id) {
   await setTimeout(() => {}, 100);
-  return jobs.find((job) => job.id == id);
+  return jobs.find((job) => job.id === id);
 }
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default { getJobs, getJob };
