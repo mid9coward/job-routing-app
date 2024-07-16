@@ -33,7 +33,7 @@ function JobDetailModal() {
       setJob(data);
     };
     fetchData();
-  }, []);
+  }, [id]);
 
   const handleClose = () => {
     navigate(-1);

@@ -4,7 +4,6 @@ import Grid from "@mui/material/Grid";
 import Container from "@mui/material/Container";
 import api from "../data/fetchData";
 import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import { styled } from "@mui/material/styles";
 import { useSearchParams } from "react-router-dom";
 import { Typography } from "@mui/material";
@@ -19,6 +18,7 @@ function Home() {
   const [jobs, setJobs] = useState([]);
   const [pagesTotal, setPagesTotal] = useState(0);
   const [page, setPage] = useState(1);
+  // eslint-disable-next-line no-unused-vars
   const [searchParams, setSearchParams] = useSearchParams();
   const q = searchParams.get("q");
 
